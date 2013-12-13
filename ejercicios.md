@@ -120,4 +120,14 @@ Y los combinamos:
 
 
 7.3 Crear un script en shell para reproducir la configuración usada en las máquinas que hagan falta.
-
+```
+#!/bin/bash
+    juju init
+    juju switch local 
+    juju bootstrap 
+    juju deploy mediawiki
+    juju deploy mysql 
+    juju add-relation mediawiki:db mysql 
+    juju expose mediawiki 
+    juju status 
+```

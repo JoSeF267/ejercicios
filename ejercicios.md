@@ -84,3 +84,19 @@ Y los combinamos:
   juju expose mediawiki 
 ```
 ![captura1](https://dl.dropbox.com/s/280hchbbeizkrq2/juju.png)
+
+
+7.1 Destruir toda la configuración creada anteriormente
+
+Para destruir toda la configuraicon:
+```
+sudo juju remove-unit mediawiki/0 mysql/0
+```
+Y para borrar las maquinas usariamos :
+```
+sudo juju destroy-machine 2
+```
+
+7.2 Volver a crear la máquina anterior y añadirle mediawiki y una relación entre ellos.
+
+7.3 Crear un script en shell para reproducir la configuración usada en las máquinas que hagan falta.

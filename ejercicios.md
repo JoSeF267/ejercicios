@@ -98,5 +98,26 @@ sudo juju destroy-machine 2
 ```
 
 7.2 Volver a crear la máquina anterior y añadirle mediawiki y una relación entre ellos.
+creamos el archivo de configuración de juju con:
+```
+juju init
+```
+Y editamos ~/.juju/environments.yaml donde default: amazon lo cambiamos por:
+```
+default: local
+```
+Cambiamos el tipo de tapper con: sudo juju switch local. E instalamos mysql para integrar mediawiki:
+```
+sudo juju deploy mediawiki
+sudo juju deploy mysql
+```
+Y los combinamos:
+```
+  sudo juju add-relation mediawiki:db mysql
+  juju expose mediawiki 
+```
+![captura1](https://dl.dropbox.com/s/280hchbbeizkrq2/juju.png)
+
 
 7.3 Crear un script en shell para reproducir la configuración usada en las máquinas que hagan falta.
+

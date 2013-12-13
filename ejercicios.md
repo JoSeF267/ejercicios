@@ -30,3 +30,57 @@ wget http://lxc-webpanel.github.io/tools/install.sh -O - | bash
 
 4.2 Desde el panel restringir los recursos que pueden usar: CPU shares, CPUs que se pueden usar (en sistemas multinúcleo) o cantidad de memoria.
 ![captura 3] (https://dl.dropbox.com/s/vf2694uliis8ilp/recursos.png)
+
+5 Comparar las prestaciones de un servidor web en una jaula y el mismo servidor en un contenedor. Usar nginx.
+
+Dentro del contenedor installamos ab:
+```
+apt-get install apache2-utils
+```
+y lo probamos de esta forma
+
+```
+ ab -n 50 -c 5 http://localhost/
+```
+
+6.1 Instalar juju
+
+Para instalar juju, vamos a realizar lo siguiente:
+```
+ sudo add-apt-repository ppa:juju/stable
+```
+Y actualizamos:
+```
+sudo apt-get update
+```
+E instalamos el siguiente paquete:
+```
+sudo apt-get install juju-core
+```
+Llegados a este punto, instalamos MongoDB mediante:
+```
+sudo apt-get install mongodb-server
+```
+Ahora creamos un tapper de la siguiente forma:
+```
+sudo juju bootstrap
+```
+y creamos el archivo de configuración de juju con:
+```
+juju init
+```
+Y editamos ~/.juju/environments.yaml donde default: amazon lo cambiamos por:
+```
+default: local
+```
+Cambiamos el tipo de tapper con: sudo juju switch local. E instalamos mysql para integrar mediawiki:
+```
+sudo juju deploy mediawiki
+sudo juju deploy mysql
+```
+Y los combinamos:
+```
+  sudo juju add-relation mediawiki:db mysql
+  juju expose mediawiki 
+```
+![captura1](https://dl.dropbox.com/s/280hchbbeizkrq2/juju.png)

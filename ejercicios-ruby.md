@@ -27,3 +27,5 @@ Si se puede crear cualquier tipo de estructura dentro de un array.
 ```
 $array={ :string=>[ 'ola','ke','ase'], :enteros['1','2','3']}
 ```
+
+4.Crear una serie de funciones instanciadas con un URL que devuelvan algún tipo de información sobre el mismo: fecha de última modificación, por ejemplo. Pista: esa información está en la cabecera HTTP que devuelve

@@ -148,9 +148,18 @@ sudo apt-get install virtinst
 
 9.Instalar un contenedor usando virt-install
 Para realiza la instalacion de un contenedor con la herramienta virt seria de la siguiente forma.
+
+Primero instalamos el  virt-viewer:
+```
+apt-get install  virt-viewer
+```
+y despues instalamos el contenedor:
 ```
 virt-install --name fedora11 --ram 512 --file=/var/lib/libvirt/images/fedora11.img \
 	--file-size=3 --vnc --cdrom=/var/lib/libvirt/images/fedora11.iso
 ```
+![captura 2](https://dl.dropbox.com/s/vp8e1bknss74cgf/fedora.png)
+y reinicamos la instalacion:
+![captura 3](https://dl.dropbox.com/s/b2sch1imi7moczt/fedora2.png)
 
 

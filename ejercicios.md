@@ -1,4 +1,4 @@
-Ejercicios 11112013
+Ejercicios Virtualización ligera usando contenedores
 --------------------------------------------------------------------------------------------
 
 1. Instala LXC en tu versión de Linux favorita.
@@ -131,3 +131,26 @@ Y los combinamos:
     juju expose mediawiki 
     juju status 
 ```
+8.Instalar libvirt
+
+Para empezar instalamos estos paquetes que necesitamos:
+```
+sudo apt-get install kvm libvirt-bin
+```
+a continuacion agregamos al grupo de usuarios:
+```
+sudo adduser $USER libvirtd
+```
+Despues instalamos el paquete virt:+
+```
+sudo apt-get install virtinst
+```
+
+9.Instalar un contenedor usando virt-install
+Para realiza la instalacion de un contenedor con la herramienta virt seria de la siguiente forma.
+```
+virt-install --name fedora11 --ram 512 --file=/var/lib/libvirt/images/fedora11.img \
+	--file-size=3 --vnc --cdrom=/var/lib/libvirt/images/fedora11.iso
+```
+
+

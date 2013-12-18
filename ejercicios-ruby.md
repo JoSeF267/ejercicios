@@ -29,3 +29,50 @@ $array={ :string=>[ 'ola','ke','ase'], :enteros['1','2','3']}
 ```
 
 4.Crear una serie de funciones instanciadas con un URL que devuelvan algún tipo de información sobre el mismo: fecha de última modificación, por ejemplo. Pista: esa información está en la cabecera HTTP que devuelve
+
+Aqui tenemos el codigo:
+```
+#!/usr/bin/ruby
+
+    require 'net/http'
+
+    def ultima_fecha()
+        response = Net::HTTP.get_response('www.shippuden.tv','/')     
+        return response['date'].to_s
+    end
+
+    def ultima_conexion()
+        response = Net::HTTP.get_response('www.shippuden.tv','/')     
+        return response['content-type'].to_s
+    end
+
+    def informacion_servidor()
+        response = Net::HTTP.get_response('www.shippuden.tv','/')     
+        return response['server'].to_s
+    end
+
+    puts ('ultima fecha:') 
+    puts ultima_fecha()
+
+    puts ('contenido servidor')   
+    puts ultima_conexion()
+
+    puts ('tipo de servidor:') 
+    puts informacion_servidor()
+
+```
+Aqui tenemos la ejecucion del programa:
+
+![captura 3](https://dl.dropbox.com/s/hxwtdq1hnr73jhf/servidor.png)
+
+5.Ver si está disponible Vagrant como una gema de Ruby e instalarla.
+
+para ver si esta disponible vagrant utilizamos la siguiente orden:
+```
+gem search --remote vagrant
+```
+y despues para instalarlo utilizamos:
+
+```
+sudo gem install vagrant
+```

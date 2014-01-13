@@ -1,4 +1,3 @@
-
 Virtualización completa: uso de máquinas virtuales
 ==========================================================================================================================
 
@@ -32,4 +31,4 @@ wget http://storage.core-os.net/coreos/amd64-generic/dev-channel/coreos_producti
 
 Despues descomprimimos e instalamos con el scrtip y listo ya tenemos funcionando el coreOS:
 
-![captura 2](
+![captura 2](https://www.dropbox.com/s/obj7y9igdb9o8h6/coreos.png)

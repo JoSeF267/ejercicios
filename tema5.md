@@ -102,4 +102,6 @@ qemu-system-x86_64 -hda lubuntu.img -cdrom lubuntu-13.10-desktop-i386.iso -m 512
 
 
 
-5.
+5.Crear una máquina virtual ubuntu e instalar en ella un servidor nginx para poder acceder mediante web.
+
+Me he descargado la version de ubuntu server y la he instalado utilizando el virtual box:

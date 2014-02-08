@@ -59,7 +59,7 @@ Despues actualizaremos la lista de paqueres y instalaremos ansible:
 sudo apt-get update
 sudo apt-get install ansible
 ```
-![captura 1]()
+![captura 1](https://dl.dropbox.com/s/q5ikxhegs5l68th/ansible.png)
 
 Nos dirigimos hasta la carpeta ansible(/etc/ansible/) y modificamos el fichero hosts:
 ```
@@ -67,13 +67,13 @@ Nos dirigimos hasta la carpeta ansible(/etc/ansible/) y modificamos el fichero h
 granadats.cloudapp.net
 ```
 y comprobamos que todo esta correcto
-![captura 3]()
+![captura 3](https://dl.dropbox.com/s/91x38wmmabpjnm1/ansible3.png)
 
 Apto seguido nos disponemos a instalar git para poder acceder y descargar las fuentes:
 ```
 apt-get install git
 ```
-![captura 2]()
+![captura 2](https://dl.dropbox.com/s/s0vhs8lt0b32u3r/ansible1.png)
 
 Ahora ya nos poremos descargar el proyecto directamente desde git:
 ```

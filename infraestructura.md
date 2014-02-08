@@ -47,3 +47,36 @@ Para escribirlos en YAML:
           - 11
 ```
 4.Desplegar los fuentes de la aplicación de DAI o cualquier otra aplicación que se encuentre en un servidor git público en la máquina virtual Azure (o una máquina virtual local) usando ansible.
+
+En mi caso voy a utilizar una maquina virtual de azure mas concretamente un ubuntu 12.04:
+
+Lo primero que hare sera agregar el repositorio de ansible al ubuntu:
+```
+sudo add-apt-repository ppa:rquillo/ansible
+```
+Despues actualizaremos la lista de paqueres y instalaremos ansible:
+```
+sudo apt-get update
+sudo apt-get install ansible
+```
+![captura 1]()
+
+Nos dirigimos hasta la carpeta ansible(/etc/ansible/) y modificamos el fichero hosts:
+```
+[azure]
+granadats.cloudapp.net
+```
+y comprobamos que todo esta correcto
+![captura 3]()
+
+Apto seguido nos disponemos a instalar git para poder acceder y descargar las fuentes:
+```
+apt-get install git
+```
+![captura 2]()
+
+Ahora ya nos poremos descargar el proyecto directamente desde git:
+```
+ansible azure -m git -u josef267 --ass-pass -a "git@github.com:JoSeF267/Practica1-iv.git" 
+```
+

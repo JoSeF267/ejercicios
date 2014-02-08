@@ -77,6 +77,6 @@ apt-get install git
 
 Ahora ya nos poremos descargar el proyecto directamente desde git:
 ```
-ansible azure -m git -u josef267 --ass-pass -a "git@github.com:JoSeF267/Practica1-iv.git" 
+ansible azure -m git -u josef267 --ask-pass -a "git@github.com:JoSeF267/Practica1-iv.git version=HEAD"
 ```
 
